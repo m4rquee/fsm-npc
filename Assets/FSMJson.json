@@ -1,8 +1,7 @@
 {
-  "start_state": "Idle",
-  "any_transitions": [
+  "startState": "IdleState",
+  "anyTransitions": [
     {
-      "from": "",
       "to": "IdleState",
       "predicate": {
         "property": "DeltaTime",

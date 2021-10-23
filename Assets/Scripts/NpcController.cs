@@ -1,11 +1,11 @@
-﻿using System;
-using States;
+﻿using States;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class NpcController : MonoBehaviour
 {
-    // public TextAsset fsmJson;
+    public TextAsset fsmJson;
     public Text stateLabel;
 
     private Animator _animator;
@@ -19,17 +19,7 @@ public class NpcController : MonoBehaviour
         var idle = new IdleState(_animator);
         var move = new MoveState(_animator);
 
-        /*var states = new List<State>();
-        states.Add(idle);
-        states.Add(move);
-        FSMLoader.Load(_finiteStateMachine, fsmJson, states);*/
-
-        _finiteStateMachine.AddAnyTransition(idle, idle.Eq(Property.DeltaTime, 0));
-        At(idle, move, idle.Gt(Property.StopWatch, 5));
-        At(move, idle, move.Gt(Property.StopWatch, 8));
-
-        void At(State from, State to, Func<bool> condition) =>
-            _finiteStateMachine.AddTransition(from, to, condition);
+        FsmLoader.Load(_finiteStateMachine, fsmJson, new List<State> {idle, move});
     }
 
     private void Update() => _finiteStateMachine.Tick(Time.deltaTime);

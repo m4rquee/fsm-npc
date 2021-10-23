@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089d0a9e2a69431dbd28a2eeb86aa025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fsmJson: {fileID: 4900000, guid: 2be13b3312143a337a6ccada869df9cf, type: 3}
   stateLabel: {fileID: 1753631681}
 --- !u!247 &259312158
 ConstantForce2D:
@@ -483,7 +484,7 @@ Transform:
   m_GameObject: {fileID: 665594098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.03, y: -3.68, z: 0}
-  m_LocalScale: {x: 200, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
