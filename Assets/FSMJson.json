@@ -1,0 +1,34 @@
+{
+  "start_state": "Idle",
+  "any_transitions": [
+    {
+      "from": "",
+      "to": "IdleState",
+      "predicate": {
+        "property": "DeltaTime",
+        "op": "Eq",
+        "value": "0"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "from": "IdleState",
+      "to": "MoveState",
+      "predicate": {
+        "property": "StopWatch",
+        "op": "Gt",
+        "value": "5"
+      }
+    },
+    {
+      "from": "MoveState",
+      "to": "IdleState",
+      "predicate": {
+        "property": "StopWatch",
+        "op": "Gt",
+        "value": "8"
+      }
+    }
+  ]
+}
